@@ -1,0 +1,632 @@
+html, body {
+    max-width: 100%;
+/*    overflow-x: hidden;*/
+}
+
+/* font-family */
+
+#splash-logo,
+.top-lead,
+h1,
+h2,
+h3 span,
+#g-nav,
+#pc-nav,
+.openbtn,
+#footer{
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+/* その場で */
+.fadeIn{
+animation-name:fadeInAnime;
+animation-duration:5.0s;
+animation-fill-mode:forwards;
+opacity:0;
+}
+
+@keyframes fadeInAnime{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 上から */
+.fadeDown{
+animation-name:fadeDownAnime;
+animation-duration:3.0s;
+animation-fill-mode:forwards;
+opacity:0;
+}
+
+@keyframes fadeDownAnime{
+  from {
+    opacity: 0;
+	transform: translateY(-240px);
+  }
+
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/* 拡大 */
+.zoomIn{
+	animation-name:zoomInAnime;
+	animation-duration:5.0s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes zoomInAnime{
+  from {
+	transform: scale(0.1);
+  }
+
+  to {
+      transform: scale(1);
+  }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+	width: 100%;
+	max-width: 100%;
+/*	overflow-x: hidden;*/
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 20px 5px 15px 5px;
+    text-align: center;
+}
+
+header .logo {
+	margin: 40px 0 0 0;
+	padding: 0;
+    background-color: #333;
+}
+
+header .logo img {
+	margin: 0;
+	padding: 0;
+    max-width: 170px;
+    background-color: #333;
+}
+
+.mj img {
+	margin: 0;
+	padding: 0;
+    max-width: 900px;
+    background-color: #333;
+}
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+.br-class {
+}
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+.br-class {
+	display: none;
+}
+}
+
+#update-button {
+	width: 70px;
+	height: 70px;
+    margin: 10px 1px;
+    padding: 0;
+    border: 2px solid #555;
+    border-radius: 3px;
+    background-color: #444;
+}
+
+#update-button img {
+	width: 66px;
+	height: 66px;
+}
+
+#kabu-main {
+	height: 345px;
+}
+
+#kabu {
+	font-size: 180%;
+    margin: 5px 0 0 0;
+    padding: 8px;
+}
+
+
+#nav {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    z-index: 50;
+}
+
+#nav ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+#nav ul li {
+    display: inline-block; /* 横並びに設定 */
+    align-items: center; /* 中央揃え */
+    text-align: center; /* 中央揃え */
+    padding: 0px;
+    width: 140px;
+    height: 50px;
+    border: 2px solid #555;
+    border-radius: 3px;
+    background-color: #444;
+}
+
+#nav ul li:hover {
+   transform: translate(-2.0px, -2.0px);
+}
+
+#nav ul li a {
+    display: block;
+    align-items: center; /* 中央揃え */
+    text-align: center; /* 中央揃え */
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-visual {
+    background-color: #f4f4f4;
+    padding: 30px 20px 30px;
+    text-align: center;
+}
+
+.main-visual h1 {
+	font-size: 200%;
+    margin: 15px 0 15px;
+}
+
+.main-visual p {
+	font-size: 150%;
+    margin: 15px 0 20px;
+}
+
+#rev-btn {
+    width:152px;
+    margin: 0 auto;
+    border:2px solid #333;
+    color: #333;
+    text-align: center;
+    padding: 10px 20px;
+    transition: all .3s;
+}
+
+#rev-btn:hover{
+    background: #333;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+.blog {
+    background-color: #f4f4f4;
+    padding: 45px 20px 30px;
+    text-align: center;
+}
+}
+
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+.blog {
+    background-color: #f4f4f4;
+    padding: 45px 20px 30px;
+    text-align: center;
+}
+}
+
+.blog h1 {
+	font-size: 200%;
+    margin: 15px 0 15px;
+}
+
+.blog p {
+	font-size: 150%;
+    margin: 20px 0;
+}
+
+.recommendations h1 {
+    margin: 10px 0 10px;
+}
+
+.news h1 {
+    margin: 10px 0 10px;
+}
+
+.recommendations h2 {
+    margin: 10px 0 10px;
+}
+
+.news h2 {
+    margin: 10px 0 10px;
+}
+
+.recommendations {
+    padding: 40px 15px 30px 15px;
+    text-align: center;
+}
+
+.news {
+    padding: 45px 5px 30px;
+    text-align: center;
+}
+
+recommendations, .news p {
+    margin: 10px 0;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+    width: 100%; /* コンテナの幅を100%に設定 */
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+.news-item {
+    font-size: 120%;
+    display: flex;
+    justify-content: flex-start; /* 開始点からの並べ方 */
+    width: 88%; /* コンテナの幅を適切に設定 */
+    margin-bottom: 10px; /* アイテム間のスペース */
+}
+
+}
+
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+.news-item {
+    font-size: 120%;
+    display: flex;
+    justify-content: flex-start; /* 開始点からの並べ方 */
+    width: 25%; /* コンテナの幅を適切に設定 */
+    margin-bottom: 10px; /* アイテム間のスペース */
+}
+
+}
+
+.news dt {
+    padding: 5px 0; /* 一貫性を持たせるためにdtとdd両方に適用 */
+    margin-right: 25px; /* dtとddの間隔 */
+}
+
+.news dd {
+    padding: 2px 0; /* 一貫性を持たせるためにdtとdd両方に適用 */
+}
+
+/* about */
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+.about {
+    background-color: #f4f4f4;
+    padding: 45px 20px 30px;
+    width: 100%; /* コンテナの幅を適切に設定 */
+    text-align: center;
+}
+#about .about-list{
+    width: 100%;
+/*    max-width: 750px;*/
+    margin: 0 auto;
+    list-style: none;
+}
+#about .about-list li{
+    width: 98%;
+    border-bottom: 1px solid #ccc;
+    margin:0 0 15px 0;
+    padding: 0 0 15px 0;
+}
+
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+.about {
+    background-color: #f4f4f4;
+    padding: 45px 20px 30px;
+    text-align: center;
+}
+#about .about-list{
+    width: 55%;
+    max-width: 750px;
+    margin: 0 auto;
+    list-style: none;
+}
+#about .about-list li{
+    border-bottom: 1px solid #ccc;
+    margin:0 0 15px 0;
+    padding: 0 0 15px 0;
+}
+
+}
+
+.about h1 {
+    margin: 10px 0 15px;
+}
+
+#about .about-list dl{
+    display: flex;
+    justify-content: space-between;
+}
+
+#about .about-list dt{
+    width:30%;
+    padding: 0 0 0 40px;
+}
+
+@media screen and (max-width:590px) {
+
+#about .about-list dt{
+     padding:0 0 0 10px; 
+    }
+}
+
+#about .about-list dd{
+    width:65%;
+}
+
+/* service */
+
+.service {
+    background-color: #ffffff;
+    padding: 45px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.service h1 {
+    margin: 10px 0 10px;
+	width: 220px;
+}
+
+.service p {
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+#service .content-area {
+    text-align: center;
+    font-size: 1rem;
+    margin: 30px 0 30px 0;
+    width: 98%;
+}
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+#service .content-area {
+    text-align: center;
+    font-size: 1rem;
+    margin: 30px 0 30px 0;
+    width: 36%;
+}
+}
+
+#service .service-area .content-area h3{
+    text-align: center;
+    font-size: 1rem;
+    margin: 15px 0 30px 0;
+}
+
+#service .service-area .content-area h3 span{
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.2rem;
+}
+
+#service .service-area .content-area p{
+    margin: 10px 0 30px 0;   
+}
+
+#service .btn{
+    text-align: right;
+}
+
+/* contact */
+
+.contact {
+    background-color: #f4f4f4;
+    padding: 45px 20px 30px;
+    text-align: center;
+}
+
+.contact h1 {
+    margin: 10px 0 15px;
+}
+
+#contact{
+    margin:0 0 0 0;
+}
+
+@media screen and (max-width:550px) {
+ #contact h2{
+     margin:0 0 50px 0;
+    }
+}
+
+#contact .form-list{
+    width:100%;
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+#contact input , button , textarea , select {
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	background:none;
+    font-size: 16px;
+}
+
+#contact .form-list input[type='text'] , 
+#contact .form-list input[type='email'] , 
+#contact .form-list textarea{
+	width:100%;
+	border:1px solid #666;
+	background:#fff;
+	padding: 10px;
+	-webkit-appearance:none;
+	   -moz-appearance:none;
+	        appearance:none;
+}
+
+#contact .form-list input[type='text'] , input[type='email'] {
+	height:50px;
+}
+
+#contact .submit-btn{
+    width:152px;
+    margin: 0 auto;
+}
+
+#contact input[type='submit']{
+   border:2px solid #333;
+    color: #333;
+    text-align: center;
+    padding: 5px 20px;
+    width:152px;
+    margin: 0 auto;
+    transition: all .3s;
+}
+
+#contact input[type='submit']:hover{
+    background: #333;
+    color: #fff;
+} 
+
+#contact .form-list dl{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	padding:0 0 20px 0;
+}
+
+#contact .form-list dt{
+    width:30%;
+}
+
+#contact .form-list dd{
+    width:66%;
+}
+
+#contact .form-list textarea {
+	height:200px;
+}
+
+@media screen and (max-width:768px) {
+#contact .form-list dt{
+	margin:0 0 10px 0;
+}
+#contact .form-list dt,
+#contact .form-list dd{
+    width:100%;
+}
+	
+}
+
+/* g-nav */
+
+.openbtn {
+    color: #aaa;
+    background-color: #fff;
+    margin: 0 0 0 0;
+    padding: 10px 20px;
+    border: 2px solid #aaa;
+    white-space: nowrap;
+    z-index: 50;
+}
+
+#g-nav {
+    color: #aaa;
+    background-color: #fff;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+    #nav {
+        display: none;
+    }
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+    .openbtn {
+        display: none;
+    }
+    #g-nav {
+        display: none;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-class {
+/*    margin-top: 600px;*/
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content .company-info {
+    margin: 10px 0 6px 0;
+}
+
+.footer-content .company-info p {
+    margin: 5px 0 5px 0;
+}
+
+.footer-legal {
+    margin: 10px 8px;
+}
+
+.footer-legal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 8px 8px;
+}
+
+.footer-legal p {
+    margin-top: 15px;
+	font-size: 80%;
+}

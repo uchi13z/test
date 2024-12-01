@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社実田テクノロジー</title>
+    <link rel="stylesheet" href="css/reset2.css">
+    <link rel="stylesheet" href="css/parts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <!--=============Google Font ===============-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+    <style>
+        #splash-logo{
+            width: 75%;
+            font-size: 2.0rem;
+            letter-spacing: 0.2em;
+            color: #333333;
+        }
+
+        /* モーダルの背景 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* モーダルコンテンツ */
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+        .modal-content div {
+            padding: 20px 40px;
+        }
+
+        /* 閉じるボタン */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="splash">
+<div id="splash-logo">
+        <div class="animate-title inview">
+            <span class="char">W</span>
+            <span class="char">e</span>
+            <span class="char">l</span>
+            <span class="char">c</span>
+            <span class="char">o</span>
+            <span class="char">m</span>
+            <span class="char">e</span>
+            <span class="char"></span>
+            <span class="char">J</span>
+            <span class="char">i</span>
+            <span class="char">t</span>
+            <span class="char">s</span>
+            <span class="char">u</span>
+            <span class="char">d</span>
+            <span class="char">a</span>
+            <span class="char"></span>
+            <span class="char">!</span>
+        </div>
+</div>
+<!--/splash--></div>
+<div class="splashbg"></div><!---画面遷移用-->
+<div id="wrapper">
+    <div id="nav">
+        <span class=""><ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="#about">会社概要</a></li>
+            <li><a href="#service">サービス内容</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+        </ul></span>
+    </div>
+    <!-- ヘッダー -->
+    <header>
+        <div class="logo zoomIn">
+            <img src="img/jida2.png" alt="株式会社実田テクノロジーのロゴ">
+        </div>
+        <div id="kabu-main">
+            <h1 id="kabu">株価情報</h1>
+            <p>Pythonのyfinanceモジュールを使用しています</p>
+            <div id="app"></div>
+        </div>
+    </header>
+
+    <!-- ホームページのメインコンテンツ -->
+    <main>
+        <section class="main-visual fadeDown">
+            <p>このサイトは就活のためのポートフォリオサイトです</p>
+            <div id="youkoso-app">
+                <h1>{{ welcomeMessage }}</h1>
+                <h1>{{ message }}</h1>
+                <button id="rev-btn" @click="reverseMessages">reverse</button>
+            </div>
+        </section>
+        <section class="news">
+            <h2>ニュース</h2>
+            <div class="news-item">
+                <dt>2024.10.25</dt><dd>ブログを更新しました</dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.10.24</dt><dd><a href="chat2.html">Difyで簡素なチャットを作成しました<br>（第2弾）</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.10.23</dt><dd><a href="chat.html">Difyで簡素なチャットを作成しました</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.10.05</dt><dd><a href="shucchou2.html">出張交通費申請フォームを作成しました</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.10.01</dt><dd><a href="../inventory-management/inventories">Laravelで在庫管理システムを<br>作成しました</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.09.11</dt><dd><a href="sabae-store.html">鯖江市の店舗マップを作成しました</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.09.05</dt><dd>スマートフォンに対応しました<br>（iphone12 mini で検証）</dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.08.03</dt><dd><a href="sales.php">売上げデータページを追加しました</a></dd>
+            </div>
+            <div class="news-item">
+                <dt>2024.06.13</dt><dd>ホームページをリニューアルしました</dd>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h1><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">会社概要</span></span></h1>
+            <ul class="about-list">
+                <li>
+                <dl>
+                    <dt>会社名</dt><dd>株式会社実田テクノロジー</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>設立</dt><dd>2020年7月</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>資本金</dt><dd>2,000万円</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>代表</dt><dd>内川真也</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>所在地</dt><dd>〒123-4567 ○○県○○市○○町○番○号</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>電話</dt><dd>03-1234-5678</dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                    <dt>主な取引先</dt><dd>○○商事<br>○&amp;○Corporation<br>○○○株式会社</dd>
+                </dl>
+                </li>
+            </ul>
+        </section>
+        <section id="service" class="service">
+            <h1><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">サービス内容</span></span></h1>
+            <div class="content-area">
+            <h3>ビジネスソリューション</h3>
+            <p>機器やソフトウェアからクラウドサービスまで、多岐にわたるソリューションを提供し、お客様の経営課題や現場での課題に対する幅広い解決策をご提案します。</p>
+            <div id="modalBtn1" class="btn"><span class="btnlinestretches3"><span>Detail</span></span></div>
+            </div>
+            <div class="content-area">
+            <h3>プロダクションプリント＆グラフィック</h3>
+            <p>印刷業界における効率化やコスト最適化、ビジネス拡大、そして働き方改革に対応したDX化を実現するため、「共に印刷の未来を築く」ビジネスパートナーとして、お手伝いさせていただきます。</p>
+            <div id="modalBtn2" class="btn"><span class="btnlinestretches3"><span>Detail</span></span></div>
+            </div>
+            <div class="content-area">
+            <h3>ヘルスケア</h3>
+            <p>画像診断やバイタルセンシング、医療ICTサービスを通じて早期診断を促進し、遺伝子検査や創薬支援サービスを通じて個別化医療を推進し、医療の発展に寄与します。</p>
+            <div id="modalBtn3" class="btn"><span class="btnlinestretches3"><span>Detail</span></span></div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h1><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">お問い合わせ</span></span></h1>
+            <form method="post" action="" enctype="multipart/form-data">
+                <ul class="form-list">
+                <li>
+                <dl>
+                <dt><label for="division">会社名・部署名</label></dt>
+                <dd><input type="text" name="Division" id="division" size="60" value="">
+                </dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                <dt><label for="name">ご担当者名</label></dt>
+                <dd><input type="text" name="Name" id="name" size="60" value="">
+                </dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                <dt><label for="email">メールアドレス</label></dt>
+                <dd><input type="email" name="E-mail" id="email" size="60" value="">
+                </dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                <dt><label for="tel">電話番号</label></dt>
+                <dd><input type="text" name="Tel" id="tel" size="60" value="">
+                </dd>
+                </dl>
+                </li>
+                <li>
+                <dl>
+                <dt><label for="msg">お問い合わせ内容</label></dt>
+                <dd><textarea name="Message" id="msg" cols="50" rows="5"></textarea>
+                </dd>
+                </dl>
+                </li>
+                </ul>
+                <div class="submit-btn"><input type="submit" name="submit" value="確認"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <div class="openbtn"><span></span><span>Menu</span><span></span></div>
+        <div id="g-nav">
+        <div id="g-nav-list">
+            <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">会社概要</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="footer-content">
+            <div class="company-info">
+                <p>株式会社実田テクノロジー</p>
+                <p>所在地：〒123-4567 ○○県○○市○○町○番○号</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy-policy">プライバシーポリシー</a>
+                <a href="/terms-of-service">利用規約</a>
+                <p>© 2024 株式会社実田テクノロジー. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="myModal1" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+        <h3>ビジネスソリューション</h3>
+        <p>機器やソフトウェアからクラウドサービスまで、多岐にわたるソリューションを提供し、お客様の経営課題や現場での課題に対する幅広い解決策をご提案します。</p>
+        </div>
+    </div>
+    </div>
+    <div id="myModal2" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+        <h3>プロダクションプリント＆グラフィック</h3>
+        <p>印刷業界における効率化やコスト最適化、ビジネス拡大、そして働き方改革に対応したDX化を実現するため、「共に印刷の未来を築く」ビジネスパートナーとして、お手伝いさせていただきます。</p>
+        </div>
+    </div>
+    </div>
+    <div id="myModal3" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+        <h3>ヘルスケア</h3>
+        <p>画像診断やバイタルセンシング、医療ICTサービスを通じて早期診断を促進し、遺伝子検査や創薬支援サービスを通じて個別化医療を推進し、医療の発展に寄与します。</p>
+        </div>
+    </div>
+    </div>
+</div>
+<!--=============JS ===============--> 
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollgress/2.0.0/scrollgress.min.js"></script>
+<!--Vue.js-->
+<script src="https://unpkg.com/vue@3.1.5"></script>
+<!--自作のJS-->   
+<script src="js/app2.js"></script>
+<script src="js/script.js"></script>
+<script>
+    // モーダル要素とトリガーボタン、閉じるボタンを取得
+    var modals = document.getElementsByClassName('modal');
+    var btns = document.querySelectorAll('.btn');
+    var closes = document.getElementsByClassName('close');
+
+    // トリガーボタンをクリックした時の動作
+    btns.forEach((btn, index) => {
+        btn.onclick = function() {
+            modals[index].style.display = "block";
+        }
+    });
+
+    // 閉じるボタン（x）をクリックした時の動作
+    Array.from(closes).forEach((close, index) => {
+        close.onclick = function() {
+            modals[index].style.display = "none";
+        }
+    });
+
+    // モーダルの外側をクリックした時の動作
+//    window.onclick = function(event) {
+//        Array.from(modals).forEach((modal) => {
+//            if (event.target == modal) {
+//                modal.style.display = "none";
+//            }
+//        });
+</script>
+
+</body>
+</html>

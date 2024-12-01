@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社実田テクノロジー</title>
+    <!--=============Google Font ===============-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/parts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <style>
+        main {
+            display: block;
+        }
+        .blog .udemy {
+            margin: 0 auto;
+            margin-bottom: 35px;
+        }
+        .slides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease;
+            will-change: transform;
+            margin-top: 40px;
+        }
+
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+        .udemy img {
+            width: 95%;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 320px; /* Adjust based on your image height */
+        }
+        .slides-bar-div {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .slides img {
+            width: 100%;
+            display: block;
+            /*object-fit: cover;*/
+        }
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+        .udemy img {
+            width: 600px;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 480px; /* Adjust based on your image height */
+        }
+        .slides-bar-div {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .slides img {
+            width: 100%;
+            display: block;
+        }
+}
+
+        .slides-bar {
+            margin-right: 20px;
+            text-decoration: underline;
+            text-underline-position: under;
+            cursor: pointer;
+            color: #cccccc;
+            transition: color 0.5s;
+            padding: 5px; /* Ensure a clickable area */
+        }
+        .slides-bar.active {
+            color: #333333; /* Change to your desired active color */
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="nav">
+        <span class=""><ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">会社概要</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+        </ul></span>
+    </div>
+    <header>
+        <div class="logo zoomIn">
+            <img src="img/jida2.png" alt="株式会社実田テクノロジーのロゴ">
+        </div>
+    </header>
+
+    <!-- ホームページのメインコンテンツ -->
+    <main>
+        <section class="blog">
+            <h1>ブログ</h1>
+            <div class="udemy">
+                <p>2024.10.25　Difyの学習が終わりました</p>
+                <img src="img/dify.shuryosho.jpg">
+            </div>
+            <div class="udemy">
+                <p>2024.10.17　ChatGPTの学習が終わりました</p>
+                <img src="img/chatgpt2.shuryosho.jpg">
+            </div>
+            <div class="udemy">
+                <p>2024.09.01　TypeScriptの学習が終わりました</p>
+                <img src="img/typescript.shuryosho.jpg">
+            </div>
+            <div class="udemy">
+                <p>2024.07.15　ChatGPTを活用したシステム設計・開発の学習が終わりました</p>
+                <img src="img/chatgpt.shuryosho.jpg">
+            </div>
+            <div class="udemy">
+                <p>2024.07.11　Vue.jsの学習が終わりました</p>
+                <img src="img/vue.js.shuryosho.jpg">
+            </div>
+            <div id="girl-slideshow">
+                <p>2024.07.03　ChatGPTで作成しました（和風の美少女）</p>
+                <div class="slideshow-container">
+                    <div class="slides" :style="slideStyle(0, 4)">
+                        <img src="img/Japanese-girl1.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(1, 4)">
+                        <img src="img/Japanese-girl2.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(2, 4)">
+                        <img src="img/Japanese-girl3.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(3, 4)">
+                        <img src="img/Japanese-girl4.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides-bar-div">
+                        <div class="slides-bar" :class="{ active: currentIndex === 0 }" @click="goToSlide(0, 4)">　1　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 1 }" @click="goToSlide(1, 4)">　2　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 2 }" @click="goToSlide(2, 4)">　3　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 3 }" @click="goToSlide(3, 4)">　4　</div>
+                    </div>
+                </div>
+             </div>
+             <div id="landscape-slideshow">
+                <p>2024.06.30　Midjourneyで作成しました（日本の風景）</p>
+                <div class="slideshow-container">
+                    <div class="slides" :style="slideStyle(0, 3)">
+                        <img src="img/utsuchi_09923_Japanese_landscape_c5cb224b-da93-4ec2-8bf2-31118a4df5d2.png" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(1, 3)">
+                        <img src="img/utsuchi_09923_Japanese_landscape_6a6b338b-a418-4757-b9ef-8fec3c403866.png" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(2, 3)">
+                        <img src="img/utsuchi_09923_Japanese_landscape_3cea249e-9389-4e55-9d8f-8b5cc3b0b4ad.png" alt="Slideshow image">
+                    </div>
+                    <div class="slides-bar-div">
+                        <div class="slides-bar" :class="{ active: currentIndex === 0 }" @click="goToSlide(0, 3)">　　1　　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 1 }" @click="goToSlide(1, 3)">　　2　　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 2 }" @click="goToSlide(2, 3)">　　3　　</div>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+    <!--footer class="footer-class"-->
+        <div class="openbtn"><span></span><span>Menu</span><span></span></div>
+        <div id="g-nav">
+        <div id="g-nav-list">
+            <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">会社概要</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="footer-content">
+            <div class="company-info">
+                <p>株式会社実田テクノロジー</p>
+                <p>所在地：〒123-4567 ○○県○○市○○町○番○号</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy-policy">プライバシーポリシー</a>
+                <a href="/terms-of-service">利用規約</a>
+                <p>© 2024 株式会社実田テクノロジー. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--=============JS ===============--> 
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollgress/2.0.0/scrollgress.min.js"></script>
+<!--Vue.js-->
+<script src="https://unpkg.com/vue@3.1.5"></script>
+<!--自作のJS-->   
+<script src="js/app2.js"></script>
+<script src="js/script.js"></script>
+<script>
+const { createApp } = Vue;
+
+// First slideshow for Japanese landscapes with 3 slides
+createApp({
+    data() {
+        return {
+            currentIndex: 0,
+            intervalId: null,
+            totalSlides: 3  // Number of slides in this slideshow
+        };
+    },
+    methods: {
+        nextSlide() {
+            this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        },
+        startSlideshow() {
+            this.intervalId = setInterval(this.nextSlide, 3000);
+        },
+        stopSlideshow() {
+            clearInterval(this.intervalId);
+        },
+        slideStyle(index) {
+            return {
+                transform: `translateX(${(index - this.currentIndex) * 100}%)`
+            };
+        },
+        goToSlide(index) {
+            this.currentIndex = index;
+            this.stopSlideshow();
+            this.startSlideshow();
+        }
+    },
+    mounted() {
+        this.startSlideshow();
+    },
+    beforeUnmount() {
+        this.stopSlideshow();
+    }
+}).mount('#landscape-slideshow');  // Specify the container element ID
+
+// Second slideshow for Japanese-style girl with 4 slides
+createApp({
+    data() {
+        return {
+            currentIndex: 0,
+            intervalId: null,
+            totalSlides: 4  // Number of slides in this slideshow
+        };
+    },
+    methods: {
+        nextSlide() {
+            this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        },
+        startSlideshow() {
+            this.intervalId = setInterval(this.nextSlide, 3000);
+        },
+        stopSlideshow() {
+            clearInterval(this.intervalId);
+        },
+        slideStyle(index) {
+            return {
+                transform: `translateX(${(index - this.currentIndex) * 100}%)`
+            };
+        },
+        goToSlide(index) {
+            this.currentIndex = index;
+            this.stopSlideshow();
+            this.startSlideshow();
+        }
+    },
+    mounted() {
+        this.startSlideshow();
+    },
+    beforeUnmount() {
+        this.stopSlideshow();
+    }
+}).mount('#girl-slideshow');  // Specify the container element ID
+</script>
+</body>
+</html>

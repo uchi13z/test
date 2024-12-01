@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社実田テクノロジー</title>
+    <!--=============Google Font ===============-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/parts.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <style>
+@media screen and (max-width: 767px) {
+/* ここに横幅が767px以下の時に発動するスタイルを記述 */
+        iframe {
+            width: 95%;
+            height: 400px;
+        }
+}
+@media screen and (min-width: 767px) {
+/* ここに横幅が767pxより大きい時に発動するスタイルを記述 */
+        iframe {
+            width: 80%;
+            height: 800px;
+        }
+}
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="nav">
+        <span class=""><ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">会社概要</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+        </ul></span>
+    </div>
+    <header>
+        <div class="logo zoomIn">
+            <img src="img/jida2.png" alt="株式会社実田テクノロジーのロゴ">
+        </div>
+    </header>
+
+    <!-- ホームページのメインコンテンツ -->
+    <main>
+        <section class="blog">
+            <h1>鯖江市の店舗マップ</h1>
+            <p>Pythonのfoliumライブラリを使用して福井県鯖江市の店舗マップを作成しました</p>
+            <p><a href="http://data.city.sabae.lg.jp/">DATA CITY Sabae</a> からデータを取得しております</p>
+            <iframe src="store.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+    <!--footer class="footer-class"-->
+        <div class="openbtn"><span></span><span>Menu</span><span></span></div>
+        <div id="g-nav">
+        <div id="g-nav-list">
+            <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="index.html#about">会社概要</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+            <li><a href="blog.html">ブログ</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="footer-content">
+            <div class="company-info">
+                <p>株式会社実田テクノロジー</p>
+                <p>所在地：〒123-4567 ○○県○○市○○町○番○号</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy-policy">プライバシーポリシー</a>
+                <a href="/terms-of-service">利用規約</a>
+                <p>© 2024 株式会社実田テクノロジー. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--=============JS ===============--> 
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollgress/2.0.0/scrollgress.min.js"></script>
+<!--Vue.js-->
+<script src="https://unpkg.com/vue@3.1.5"></script>
+<!--自作のJS-->   
+<script src="js/app2.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "name": "suchi/test",
+    "autoload": {
+        "psr-4": {
+            "Suchi\\Test\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "shinya uchikawa",
+            "email": "sin28zyx@gmail.com"
+        }
+    ],
+    "require": {
+        "tecnickcom/tcpdf": "^6.7"
+    }
+}
