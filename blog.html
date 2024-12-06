@@ -58,6 +58,10 @@
         .udemy img {
             width: 600px;
         }
+        #dog-slideshow img {
+            width: 420px;
+            margin: 0 auto;
+        }
         .slideshow-container {
             position: relative;
             max-width: 700px;
@@ -113,6 +117,21 @@
     <main>
         <section class="blog">
             <h1>ブログ</h1>
+            <div id="dog-slideshow">
+                <p>2024.12.06　DALL-Eで作成しました<br>（ゴールデンレトリーバー、仕事中、サングラス、パソコンを操作、背景は木材のオフィス）</p>
+                <div class="slideshow-container">
+                    <div class="slides" :style="slideStyle(0, 2)">
+                        <img src="img/DALL·E-2024-12-06-22.20.43.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides" :style="slideStyle(1, 2)">
+                        <img src="img/DALL·E-2024-12-06-23.23.25.webp" alt="Slideshow image">
+                    </div>
+                    <div class="slides-bar-div">
+                        <div class="slides-bar" :class="{ active: currentIndex === 0 }" @click="goToSlide(0, 2)">　1　</div>
+                        <div class="slides-bar" :class="{ active: currentIndex === 1 }" @click="goToSlide(1, 2)">　2　</div>
+                    </div>
+                </div>
+            </div>
             <div class="udemy">
                 <p>2024.10.25　Difyの学習が終わりました</p>
                 <img src="img/dify.shuryosho.jpg">
@@ -217,6 +236,44 @@
 <script src="js/script.js"></script>
 <script>
 const { createApp } = Vue;
+
+// Dog slideshow with 2 slides
+createApp({
+    data() {
+        return {
+            currentIndex: 0,
+            intervalId: null,
+            totalSlides: 2  // Number of slides in this slideshow
+        };
+    },
+    methods: {
+        nextSlide() {
+            this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        },
+        startSlideshow() {
+            this.intervalId = setInterval(this.nextSlide, 3000);
+        },
+        stopSlideshow() {
+            clearInterval(this.intervalId);
+        },
+        slideStyle(index) {
+            return {
+                transform: `translateX(${(index - this.currentIndex) * 100}%)`
+            };
+        },
+        goToSlide(index) {
+            this.currentIndex = index;
+            this.stopSlideshow();
+            this.startSlideshow();
+        }
+    },
+    mounted() {
+        this.startSlideshow();
+    },
+    beforeUnmount() {
+        this.stopSlideshow();
+    }
+}).mount('#dog-slideshow');  // Specify the container element ID
 
 // First slideshow for Japanese landscapes with 3 slides
 createApp({
